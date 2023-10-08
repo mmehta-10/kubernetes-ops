@@ -20,6 +20,7 @@ on:
 
 jobs:
   renovate:
+    name: Renovate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -34,6 +35,8 @@ jobs:
         run: npm install -g renovate
 
       - name: Run Renovate
-        run: renovate
+        uses: docker://renovate/renovate:19.133-slim
         env:
-          RENOVATE_CONFIG_FILE: .github/renovate.json
+          RENOVATE_REPOSITORIES: mmehta-10/kubernetes-ops
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          RENOVATE_AUTOMERGE: true # optional, see below
