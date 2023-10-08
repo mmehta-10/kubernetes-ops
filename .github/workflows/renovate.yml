@@ -1,0 +1,26 @@
+name: Renovate
+
+on:
+  # Trigger Renovate on a schedule (e.g., daily)
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install Renovate
+        run: npm install -g renovate
+
+      - name: Run Renovate
+        run: renovate
+        env:
+          RENOVATE_CONFIG_FILE: .github/renovate.json
