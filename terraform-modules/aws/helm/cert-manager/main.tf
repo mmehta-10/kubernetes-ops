@@ -5,7 +5,7 @@ locals {
 
 module "iam_assumable_role_admin" {
   source                        = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
-  version                       = "3.6.0"
+  version                       = "3.16.0"
   create_role                   = true
   role_name                     = "${local.official_chart_name}-${var.cluster_name}"
   provider_url                  = replace(var.eks_cluster_oidc_issuer_url, "https://", "")

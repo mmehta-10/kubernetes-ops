@@ -34,7 +34,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "this" {
 
 module "iam_assumable_role_admin" {
   source                        = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
-  version                       = "3.6.0"
+  version                       = "3.16.0"
   create_role                   = true
   role_name                     = "loki-stack-${var.cluster_name}"
   provider_url                  = replace(var.eks_cluster_oidc_issuer_url, "https://", "")
