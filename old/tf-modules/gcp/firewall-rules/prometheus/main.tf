@@ -6,7 +6,7 @@ provider "google" {
   region      = var.region
   project     = var.project_name
   credentials = file(var.credentials_file_path)
-  version     = "~> 2.10.0"
+  version     = "~> 2.20.0"
 }
 
 resource "google_compute_firewall" "default" {
