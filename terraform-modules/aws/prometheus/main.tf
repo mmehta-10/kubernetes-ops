@@ -29,7 +29,7 @@ resource "aws_iam_openid_connect_provider" "this" {
 module "iam_assumable_role_admin" {
   count       = length(var.iam_access_grant_list)
   source      = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
-  version     = "3.6.0"
+  version     = "5.30.0"
   create_role = true
   role_name   = "${local.base_name}-${var.iam_access_grant_list[count.index].environment_name}"
   # role_path                     = "/token-file-web-identity/"

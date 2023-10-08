@@ -91,7 +91,7 @@ data "aws_caller_identity" "current" {}
 # The rest of the list consists of policies that you can provide through the iam_extra_policies variable.
 module "iam_assumable_role_admin" {
   source                        = "terraform-aws-modules/iam/aws//modules/iam-assumable-role"
-  version                       = "5.11.2"
+  version                       = "5.30.0"
 
   create_role             = true
   role_name               = "airflow-${var.airflow_name}"
