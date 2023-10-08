@@ -1,6 +1,19 @@
 name: Renovate
 
 on:
+  # Allows manual/automated ad-hoc trigger
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: "Override default log level"
+        required: false
+        default: "info"
+        type: string
+      overrideSchedule:
+        description: "Override all schedules"
+        required: false
+        default: "false"
+        type: string
   # Trigger Renovate on a schedule (e.g., daily)
   schedule:
     - cron: "0 0 * * *"
