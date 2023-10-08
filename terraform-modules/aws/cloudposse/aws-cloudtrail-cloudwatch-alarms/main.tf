@@ -87,7 +87,7 @@ module "metric_configs" {
 
 module "cloudtrail" {
   source                        = "cloudposse/cloudtrail/aws"
-  version                       = "0.17.0"
+  version                       = "0.17.1"
   enable_log_file_validation    = true
   include_global_service_events = true
   is_multi_region_trail         = var.is_multi_region_trail
