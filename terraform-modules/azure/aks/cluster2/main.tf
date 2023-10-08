@@ -11,7 +11,7 @@ data "azurerm_client_config" "current" {
 
 module "aks_cluster" {
   source  = "Azure/aks/azurerm"
-  version = "6.6.0"
+  version = "6.8.0"
 
   prefix                               = var.dns_prefix
   resource_group_name                  = local.resource_group.name
