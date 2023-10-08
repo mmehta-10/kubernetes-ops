@@ -77,7 +77,7 @@ provider "helm" {
 # Helm - cluster-autoscaler
 #
 module "external-dns" {
-  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/helm/external-dns?ref=v1.0.28"
+  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/helm/external-dns?ref=v2.0.85"
 
   aws_region                  = local.aws_region
   cluster_name                = local.environment_name
