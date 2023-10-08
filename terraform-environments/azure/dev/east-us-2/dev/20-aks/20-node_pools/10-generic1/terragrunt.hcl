@@ -4,7 +4,7 @@ include {
 }
 
 terraform {
-  source = "git::ssh://git@github.com/ManagedKube/kubernetes-ops.git//terraform-modules/azure/aks/node_pool/?ref=v2.0.51"
+  source = "git::ssh://git@github.com/ManagedKube/kubernetes-ops.git//terraform-modules/azure/aks/node_pool/?ref=v2.0.85"
 }
 
 dependency "kubernetes_cluster" {

@@ -4,7 +4,7 @@ include {
 }
 
 terraform {
-  source = "git::ssh://git@github.com/ManagedKube/kubernetes-ops.git//terraform-modules/azure/dns/public?ref=v2.0.50"
+  source = "git::ssh://git@github.com/ManagedKube/kubernetes-ops.git//terraform-modules/azure/dns/public?ref=v2.0.85"
 }
 
 # dependency "aks" {

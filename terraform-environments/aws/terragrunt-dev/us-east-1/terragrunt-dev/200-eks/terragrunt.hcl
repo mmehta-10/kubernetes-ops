@@ -4,7 +4,7 @@ include {
 }
 
 terraform {
-  source = "github.com/ManagedKube/kubernetes-ops.git//terraform-modules/aws/eks?ref=v2.0.29"
+  source = "github.com/ManagedKube/kubernetes-ops.git//terraform-modules/aws/eks?ref=v2.0.85"
 }
 
 dependency "vpc" {

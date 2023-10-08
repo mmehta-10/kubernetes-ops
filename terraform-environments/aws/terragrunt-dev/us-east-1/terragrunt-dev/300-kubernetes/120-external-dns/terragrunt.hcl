@@ -4,7 +4,7 @@ include {
 }
 
 terraform {
-  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/helm/external-dns?ref=v2.0.31"
+  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/helm/external-dns?ref=v2.0.85"
 }
 
 dependency "eks" {

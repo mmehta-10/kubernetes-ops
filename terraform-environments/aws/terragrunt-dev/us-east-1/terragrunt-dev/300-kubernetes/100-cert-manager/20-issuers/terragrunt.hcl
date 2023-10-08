@@ -4,7 +4,7 @@ include {
 }
 
 terraform {
-  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/helm/cert-manager-issuers?ref=v2.0.30"
+  source = "github.com/ManagedKube/kubernetes-ops//terraform-modules/aws/helm/cert-manager-issuers?ref=v2.0.85"
 }
 
 dependency "eks" {
