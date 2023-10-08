@@ -14,7 +14,7 @@ terraform {
 
 module "efs" {
   source  = "cloudposse/efs/aws"
-  version = "0.30.1"
+  version = "0.34.0"
 
   namespace       = var.efs_namespace
   stage           = var.environment_name
