@@ -1,5 +1,7 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
+    "config:base",
     ":separateMajorReleases",
     ":ignoreUnstable",
     ":prImmediately",
@@ -17,6 +19,7 @@
     ":automergePatch",
     ":automergeMinor"
   ],
+  "renovateFork": true,
   "baseBranches": ["main"],
   "enabledManagers": ["github-actions", "pre-commit", "terraform", "terragrunt"],
   "semanticCommits": "enabled",
