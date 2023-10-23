@@ -19,7 +19,7 @@
     ":dependencyDashboard"
   ],
   "baseBranches": ["main"],
-  "enabledManagers": ["helmv3", "github-actions", "pre-commit", "terraform"],
+  "enabledManagers": ["helmv3", "github-actions", "pre-commit", "terraform","docker"],
   "semanticCommits": "enabled",
   "automergeType": "pr-comment",
   "automergeComment": "renovate:merge",
