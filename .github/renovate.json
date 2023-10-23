@@ -19,6 +19,7 @@
     ":dependencyDashboard"
   ],
   "baseBranches": ["main"],
+  "enabledManagers": ["helmv3", "regex"],
   "semanticCommits": "enabled",
   "automergeType": "pr-comment",
   "automergeComment": "renovate:merge",
