@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:18.10
 
 # Add the entire repository into the container
 ADD ./ /opt/repo/
