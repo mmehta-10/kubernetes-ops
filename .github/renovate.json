@@ -15,17 +15,64 @@
     "workarounds:all",
     ":automergeDigest",
     ":automergePatch",
-    ":automergeMinor"
+    ":automergeMinor",
+    ":dependencyDashboard"
   ],
   "baseBranches": ["main"],
-  "enabledManagers": ["github-actions", "pre-commit", "terraform", "terragrunt"],
+  "enabledManagers": ["helmv3", "github-actions", "pre-commit", "terraform"],
   "semanticCommits": "enabled",
   "automergeType": "pr-comment",
   "automergeComment": "renovate:merge",
-  "reviewers": [
-    "team:team"
-  ],
+  "helmv3": {
+    "enabled": true,
+    "fileMatch": ["(^|/)helm-dependencies.yaml$"]
+  },
+   "customManagers": [
+      {
+        "customType": "regex",
+        "datasourceTemplate": "docker",
+        "fileMatch": ["(^|/)helm-dependencies.yaml$"],
+        "matchStrings": [
+          "^.*name:\\n.*repository:\\s(?<depName>.*)\\s.*\\n.*\\n.*\\n.*tag:\\s(?<currentValue>.*)"
+        ]
+      }
+    ],
+  "reviewersFromCodeOwners": true,
   "prHourlyLimit": 0,
+  "ignoreDeps": [
+    "admiralty",
+    "secrets-store-csi-driver",
+    "aws-for-fluent-bit",
+    "aws-node-termination-handler",
+    "aws-calico",
+    "cert-manager-csi-driver",
+    "flux",
+    "istio-operator",
+    "k8gb",
+    "karma",
+    "keda",
+    "keycloak",
+    "kong",
+    "kyverno",
+    "kyverno-crds",
+    "linkerd2",
+    "linkerd2-cni",
+    "linkerd-viz",
+    "prometheus-adapter",
+    "prometheus-cloudwatch-exporter",
+    "prometheus-blackbox-exporter",
+    "rabbitmq-cluster-operator",
+    "scaleway-webhook",
+    "sealed-secrets",
+    "strimzi-kafka-operator",
+    "thanos",
+    "tigera-operator",
+    "traefik",
+    "memcached",
+    "vault",
+    "velero",
+    "victoria-metrics-k8s-stack"
+  ],
   "packageRules": [
       {
         "matchManagers": ["github-actions"],
@@ -38,9 +85,26 @@
         "semanticCommitType": "chore"
       },
       {
-        "matchManagers": ["terraform","terragrunt"],
+        "matchManagers": ["helmv3"],
+        "semanticCommitScope": "charts",
+        "semanticCommitType": "fix",
+        "matchUpdateTypes": ["patch", "digest"]
+      },
+      {
+        "matchManagers": ["helmv3"],
+        "semanticCommitScope": "charts",
+        "semanticCommitType": "feat",
+        "matchUpdateTypes": ["major", "minor"]
+      },
+      {
+        "matchManagers": ["terraform"],
         "semanticCommitScope": "tf",
-        "semanticCommitType": "feat"
-      }
+        "semanticCommitType": "feat",
+        "automerge": false
+      }, 
+      {
+        "matchDatasources": ["docker"],
+        "versioning": "loose"
+      }      
     ]
 }
