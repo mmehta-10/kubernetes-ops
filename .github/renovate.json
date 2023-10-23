@@ -33,7 +33,7 @@
         "datasourceTemplate": "docker",
         "fileMatch": ["(^|/)helm-dependencies.yaml$"],
         "matchStrings": [
-          "^.*name:\\n.*repository:\\s(?<depName>.*)\\s.*\\n.*\\n.*\\n.*tag:\\s(?<currentValue>.*)"
+          "^.*name:\\n.*repository:\\s(?<depName>.*).*\\n.*\\n.*\\n.*tag:\\s(?<currentValue>.*)"
         ]
       }
     ],
