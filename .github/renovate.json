@@ -19,7 +19,7 @@
     ":dependencyDashboard"
   ],
   "baseBranches": ["main"],
-  "enabledManagers": [ "regex"],
+  "enabledManagers": [ "helmv3", "regex"],
   "semanticCommits": "enabled",
   "automergeType": "pr-comment",
   "automergeComment": "renovate:merge",
@@ -33,7 +33,7 @@
         "datasourceTemplate": "docker",
         "fileMatch": ["(^|/)helm-dependencies.yaml$"],
         "matchStrings": [
-          "^.*name:\\n.*repository:\\s(?<depName>.*).*\\n.*\\n.*\\n.*tag:\\s(?<currentValue>.*)"
+          "name:\\n.*repository:\\s(?<depName>.*).*\\n.*\\n.*\\n.*tag:\\s(?<currentValue>.*)"
         ]
       }
     ],
